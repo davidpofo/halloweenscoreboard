@@ -1,0 +1,867 @@
+/* ELEMENT STYLES -------------------- */
+body {
+  background: #070707;
+  font-family: arial;
+  text-transform: uppercase;
+}
+spookybody{
+	margin:0;
+	color:#444;
+	background:#ffff33;
+	font:300 18px/18px Roboto, sans-serif;
+}
+*,:after,:before{box-sizing:border-box}
+.pull-left{float:left}
+.pull-right{float:right}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+
+.halloween .head .skull:before,
+.halloween .head .skull:after,
+.halloween .eyes .eye:before,
+.halloween .spookybody:before,
+.halloween .spookybody:after,
+.halloween .legs:before{
+	content:'';
+	position:absolute;
+}
+.halloween{
+	top:50%;
+	left:50%;
+	width:30px;
+	height:44px;
+	position:fixed;
+	margin-top:-22px;
+	margin-left:-15px;
+	animation:move 3s infinite;
+}
+.halloween .head{
+	z-index:1;
+	width:25px;
+	height:25px;
+	background:#444;
+	border-radius:50%;
+	position:relative;
+}
+.halloween .head .skull{
+	left:2px;
+	bottom:2px;
+	width:16px;
+	height:16px;
+	color:#f9f9f9;
+	border-radius:50%;
+	background:#f9f9f9;
+	position:absolute;
+	animation:skull 3s infinite;
+}
+.halloween .head .skull:before{
+	top:9px;
+	width:0;
+	left:50%;
+	height:0;
+	z-index:1;
+	margin-left:-2px;
+	border:2px solid transparent;
+	border-bottom:2px solid #444;
+}
+.halloween .head .skull:after{
+	top:14px;
+	left:50%;
+	width:1px;
+	height:4px;
+	margin-left:-1px;
+	background:#f9f9f9;
+	box-shadow: 2px 0,-2px 0,4px 0,-4px 0,
+				-3px -2px,-1px -2px,1px -2px,3px -2px
+}
+.halloween .eyes{
+	width:inherit;
+	height:inherit;
+	overflow:hidden;
+	border-radius:50%;
+	position:relative;
+}
+.halloween .eyes .eye{
+	top:5px;
+	width:5px;
+	height:5px;
+	position:absolute;
+	border-radius:50%;
+	background:#f8cd22;
+	border:1px solid #444;
+	border-right:2px solid #444;
+}
+.halloween .eyes .eye:before{
+	top:-1px;
+	left:-1px;
+	width:5px;
+	height:3px;
+	background:#f9f9f9;
+	border-radius:5px 5px 0 0;
+	animation:eyes 3s infinite;
+}
+.halloween .eyes .eye.eye-left{
+	left:1px;
+}
+.halloween .eyes .eye.eye-right{
+	right:1px;
+}
+.halloween .spookybody{
+	top:-3px;
+	width:24px;
+	height:17px;
+	background:#444;
+	position:relative;
+	border-radius:10px 10px 2px 2px;
+}
+.halloween .spookybody:before,
+.halloween .spookybody:after{
+	top:3px;
+	width:4px;
+	height:12px;
+	background:#444;
+}
+.halloween .spookybody:before{
+	left:-1px;
+	border-radius:100% 0 0 2px;
+	transform:rotate(10deg);
+	animation:hand-left 3s infinite;
+}
+.halloween .spookybody:after{
+	right:-1px;
+	border-radius:0 100% 2px 0;
+	transform:rotate(-10deg);
+	animation:hand-right 3s infinite;
+}
+.halloween .legs{
+	top:-3px;
+	left:50%;
+	width:21px;
+	height:10px;
+	overflow:hidden;
+	margin-left:-13px;
+	position:relative;
+	border-bottom:1px solid rgba(0,0,0,.2);
+}
+.halloween .legs:before{
+	top:0;
+	left:-7px;
+	width:60px;
+	height:10px;
+	background-image:linear-gradient(-495deg, #444 4px,transparent 0), linear-gradient(-45deg, transparent 4px, #444 0);
+	background-size:4px 8px;
+	background-repeat:repeat-x;
+	animation:legs 3s infinite;
+}
+@keyframes move{
+	0%{
+		transform:translateX(0)
+	}
+	50%{
+		transform:translateX(15px)
+	}
+	100%{
+		transform:translateX(0)
+	}
+}
+@keyframes skull{
+	0%{
+		transform:translate(0,0)
+	}
+	25%{
+		transform:translate(2px,1px)
+	}
+	75%{
+		transform:translate(3px,-1px)
+	}
+	100%{
+		transform:translate(0,0)
+	}
+}
+@keyframes eyes{
+	0%{
+		top:-5px;
+		border-radius:50%;
+	}
+	50%{
+		top:-1px;
+		border-radius:5px 5px 0 0;
+	}
+	100%{
+		top:-5px;
+		border-radius:50%;
+	}
+}
+@keyframes legs{
+	0%{
+		left:-7px;
+	}
+	50%{
+		left:-25px;
+	}
+	100%{
+		left:-7px;
+	}
+}
+@keyframes hand-left{
+	0%{
+		left:1px;
+	}
+	50%{
+		left:-2px;
+	}
+	100%{
+		left:1px;
+	}
+}
+@keyframes hand-right{
+	0%{
+		right:1px;
+	}
+	50%{
+		right:-2px;
+	}
+	100%{
+		right:1px;
+	}
+}
+header {
+  color: #FFF;
+  padding: 5px 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: #FF7619;
+  border-bottom: solid 2px #070707;
+}
+
+header h1 {
+  flex-grow: 1;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+/* FORMS */
+form {
+  display: flex;
+  background-color: #FF7619;
+}
+
+input[type=text] {
+  flex-grow: 1;
+  border-width: 0 0 1px 0;
+  margin: 15px 10px 15px 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #8c4614;
+  border-style: none;
+  text-shadow: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 2px;
+  outline: none;
+}
+
+input[type=text]::-webkit-input-placeholder{
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+input[type=text]:focus{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+input[type=submit] {
+  display: block;
+  font-size: .6em;
+  margin: 15px 15px 15px 0; 
+  padding: 10px;
+  background-color: #070707;;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button, 
+input[type=submit] {
+  outline: none;
+  transition: background-color 0.2s ease,
+              color 0.2s ease;
+}
+
+/* ICONS */
+svg {
+  width: 28px;
+  height: 19px;
+  margin-right: 5px;
+  fill: #FF7619;
+}
+
+.is-high-score {
+  fill: #FFC657;
+  animation: grow 0.35s ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+@keyframes grow {
+  50% { transform: scale(1.4) rotate(-3deg); }
+}
+
+/* COMPONENT STYLES -------------------- */
+.scoreboard {
+  background: #fff;
+  width: 700px;
+  margin: 70px auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.player {
+  display: flex;
+  font-size: 1.2em;
+  border-bottom: solid 2px #070707;
+  letter-spacing: 2px;
+}
+
+  .player:last-of-type {
+    border-bottom-color: #070707;
+  }
+
+  .player-name:hover .remove-player {
+    visibility: visible;
+  }
+
+  .player-name,
+  .counter-score {
+    color: #2F2366;
+  }
+
+  .player-name {
+    flex-grow: 1;
+    line-height: 3.5em;
+    padding-left: 10px;
+  }
+
+  .remove-player {
+    font-size: 1.15em;
+    border: none;
+    outline: none;
+    visibility: hidden;
+    color: #EF5350;
+    cursor: pointer;
+    margin: 0 10px 0 0;
+    padding: 0;
+    background: none;
+  }
+
+.stats,
+.stopwatch {
+  width: 240px;
+}
+
+.stats {
+  display: flex;
+  margin: 0 0 0 28px;
+  font-weight: normal;
+}
+
+  .stats td:first-child {
+     font-weight: normal;
+    letter-spacing: 2px;
+    font-size: .9em;
+      font-family: 'Bungee', cursive;
+      text-shadow: 0 5px #964527;
+
+  }
+
+  .stats td:last-child {
+      display: flex;
+      font-family: 'Bungee', cursive;
+    font-size: 1em;
+  }
+
+.stopwatch {
+  padding: 15px 10px 5px 10px;
+  margin: -5px -10px -5px 10px;
+  background: #FF7619;
+            font-size: 1em;
+      font-family: 'Bungee', cursive;
+       text-shadow: 0 5px #964527;
+}
+
+  .stopwatch-time {
+    display: block;
+    font-family: monospace;
+    font-size: 2.15em;
+  }
+
+  .stopwatch button {
+    margin: 8px 5px;
+    background-color: #070707;
+    border-radius: 5px;
+    padding: 7px 8px;
+    border: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: none;
+    text-transform: uppercase;
+  }
+
+  .stopwatch button:hover,
+  input[type=submit]:hover {
+    background: #fff;
+    color: #070707;;
+    cursor: pointer;
+  }
+
+  .stopwatch h2 {
+    font-size: .6em;
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+.counter {
+  display: flex;
+  width: 190px;
+}
+
+  .counter-action {
+    border: none;
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #B0AEBA;
+    background-color: #DCDCDC;
+    display: block;
+    padding: 20px 20px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .counter-action:hover {
+    color: #070707;
+  }
+
+  .increment:hover {
+    background: #83D97C;
+  }
+
+  .decrement:hover {
+    background: #EF5350;
+  }
+
+  .counter-score {
+    flex-grow: 1;
+    text-align: center;
+    font-family: monospace;
+    font-size: 2em;
+    line-height: 2em;
+  }
+
+/*Hallo head*/
+
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
+/* Animations */
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes eyes {
+    0% {
+        margin-top: 10px;
+    }
+    100% {
+        border-bottom-color: yellow;
+        box-shadow: 0 10px 200px orange;
+        margin-top: 0;
+    }
+}
+
+@keyframes mouth {
+    0% {
+        height: 50px;
+    }
+    100% {
+        height: 80px;
+        background-color: yellow;
+        box-shadow: inset 0 0 40px orangered;
+    }
+}
+
+@keyframes letter {
+    0% {
+        letter-spacing: 0;
+    }
+    100% {
+        letter-spacing: 10px;
+    }
+}
+
+@keyframes face {
+    0% {
+        margin: 0 40px
+    }
+    100% {
+        margin: -20px 40px;
+    }
+}
+
+
+body {
+    background-color: #070707;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 100px;
+    color: #ffffff;
+    font-family: 'Bungee', cursive;
+    /*animation: letter 5s infinite alternate;*/
+        text-shadow: 0 5px #964527;
+}
+
+/*h1 span {*/
+/*    display: block;*/
+/*    font-size: 0.7em;*/
+/*    color: orange;*/
+/*    text-shadow: 0 5px #964527;*/
+/*}*/
+
+
+.lantern {
+    animation: zoom 1s infinite alternate;
+    width: 330px;
+    height: 280px;
+    background-color: orangered;
+    border-width: 0 30px;
+    border-style: solid;
+    border-color: #ff6830;
+    border-radius: 100px;
+     position:relative;
+    margin-right: 100px;
+         margin-top: -400px;
+}
+
+.lantern:before,
+.lantern:after {
+    content: '';
+    width: 52px;
+    top: 0;
+    bottom: 0;
+    background-color: #000;
+    position: absolute;
+    left: -100px;
+    top: 0;
+    margin: 20px 0;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 2000px;
+    border-width: 0 0 0 20px;
+    border-color: #222;
+    border-style: solid;
+    animation: git 1s infinite alternate;
+}
+.lantern:after {
+    left: auto;
+    right: -100px;
+    transform: rotateY(180deg);
+}
+
+.face {
+    position: absolute;
+    border-width: 0 30px 0;
+    border-style: solid;
+    border-color: #ff6830;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: -10px 40px;
+    animation: face 1s infinite alternate;
+    background-color: orangered;
+    border-radius: 70px;
+}
+
+.face:before {
+    content: '';
+    width: 30px;
+    height: 60px;
+    background-color: forestgreen;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: -70px auto 0;
+    top: 0;
+    border-width: 0 10px 20px 10px;
+    border-style: solid;
+    border-color: darkgreen darkgreen #0a330a;
+    border-radius: 10px;
+}
+
+.eyes {
+    text-align: center;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-indent: -65px;
+    animation: eyes 1s infinite alternate;
+}
+
+.eyes:before,
+.eyes:after {
+    animation: eyes 1s infinite alternate;
+    content: '';
+    display: inline-block;
+    width: 0;
+    border-top-left-radius: 100%;
+    height: 0;
+    border-width: 60px;
+    border-style: solid;
+    margin: 10px;
+    border-color: transparent transparent #070707 transparent;
+    border-radius: 100%;
+}
+
+
+.mouth {
+    background-color: #070707;
+    height: 40px;
+    border-top: 15px dashed orangered;
+    border-bottom: 10px dotted orangered;
+    border-radius: 0px;
+    animation: mouth 1s infinite alternate;
+}
+
+
+  /*CSS eyes*/
+
+#hitarea{
+  position:absolute;
+  left:50%;
+  margin-left:-800px;
+  width:500px;
+  height:500px;
+}
+.hitbox{
+    width:100px;
+    height:100px;
+    float:left;
+}
+
+/* eyes */
+.eye{
+  position:absolute;
+  width:100px;
+  height:100px;
+  background: #fff;
+  border-radius:50px;
+  left:25%;
+  top: 40%;
+  pointer-events: none;
+}
+
+.eye+.eye{
+    left: 55%;
+}
+
+.pupil{
+  position:relative;
+  width:25px;
+  height:25px;
+  background:#000;
+  border-radius:12px;
+  left:50%;
+  top:50%;
+  margin:-12px 0 0 -12px;
+  -webkit-transition: all .5s ease;
+}
+
+.eyelid{
+    width:150px;
+    height: 100px;
+    position:absolute;
+    left:20%;
+    top: 25%;
+    pointer-events: none;
+    background: #000;
+    -webkit-animation-name:             blink;
+    -webkit-animation-duration:         4.5s;
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function:  linear;
+    -webkit-animation-direction:        alternate;
+    -webkit-animation-delay: 1s;
+    -webkit-transition: all .5s ease;
+
+}
+
+.eyelid+.eyelid{
+    left: 50%;
+}
+
+/* Blinking eyes */
+@-webkit-keyframes blink{
+  0%{
+    top:25%;
+  }
+ 95%{
+    top:25%;
+  }
+  100%{
+    top:40%;
+  }
+}
+
+/* hover events */
+
+/* eye lids */
+.hitbox:hover ~ .eyelid{
+    -webkit-transform: rotate(-10deg);
+}
+.hitbox:hover ~ .eyelid:nth-of-type(2n+1){
+    -webkit-transform: rotate(10deg);
+}
+#c-3:hover ~ .eyelid{
+    -webkit-transform: rotate(15deg);
+}
+#c-3:hover ~ .eyelid:nth-of-type(2n+1) {
+    -webkit-transform: rotate(-15deg);
+}
+
+/* pupils */
+
+#a-1:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(60deg) translate(-30px);
+}
+
+#a-2:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(80deg) translate(-30px);
+}
+
+#a-3:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(90deg) translate(-30px);
+}
+
+#a-4:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(100deg) translate(-30px);
+}
+
+#a-5:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(120deg) translate(-30px);
+}
+
+#b-1:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(50deg) translate(-25px);
+}
+
+#b-2:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(70deg) translate(-25px);
+}
+
+#b-3:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(100deg) translate(-25px);
+}
+
+#b-3:hover ~ .eye:nth-of-type(2n+1) > .pupil {
+    -webkit-transform: rotate(80deg) translate(-25px);
+}
+
+#b-4:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(110deg) translate(-25px);
+}
+
+#b-5:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(130deg) translate(-25px);
+}
+
+#c-1:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(0deg) translate(-25px);
+}
+
+#c-2:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(0deg) translate(-10px);
+}
+
+#c-3:hover ~ .eye > .pupil{
+    background: red;
+    -webkit-transform: rotate(180deg) translate(-25px);
+}
+
+#c-3:hover ~ .eye:nth-of-type(2n+1) > .pupil {
+    -webkit-transform: rotate(0deg) translate(-25px);
+}
+
+#c-4:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(180deg) translate(-10px);
+}
+
+#c-5:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(180deg) translate(-25px);
+}
+
+#d-1:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(-40deg) translate(-25px);
+}
+
+#d-2:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(-60deg) translate(-25px);
+}
+
+#d-3:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(-120deg) translate(-25px);
+}
+
+#d-3:hover ~ .eye:nth-of-type(2n+1) > .pupil {
+    -webkit-transform: rotate(-60deg) translate(-25px);
+}
+
+#d-4:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(-130deg) translate(-25px);
+}
+
+#d-4:hover ~ .eye:nth-of-type(2n+1) > .pupil{
+    -webkit-transform: rotate(-100deg) translate(-25px);
+}
+
+#d-5:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(-140deg) translate(-25px);
+}
+
+#e-1:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(-40deg) translate(-30px);
+}
+
+#e-2:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(-60deg) translate(-30px);
+}
+
+#e-3:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(-120deg) translate(-30px);
+}
+
+#e-3:hover ~ .eye:nth-of-type(2n+1) > .pupil {
+    -webkit-transform: rotate(-60deg) translate(-30px);
+}
+
+#e-4:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(-130deg) translate(-30px);
+}
+
+#e-4:hover ~ .eye:nth-of-type(2n+1) > .pupil{
+    -webkit-transform: rotate(-100deg) translate(-30px);
+}
+
+#e-5:hover ~ .eye > .pupil{
+    -webkit-transform: rotate(-140deg) translate(-30px);
+}
