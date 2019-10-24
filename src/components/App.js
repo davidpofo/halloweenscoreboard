@@ -93,7 +93,7 @@ class App extends Component {
         <AddPlayerForm addPlayer={this.handleAddPlayer}/>
 
       </div>
-    );
+    )
   }
 }
 
