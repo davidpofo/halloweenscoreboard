@@ -33,11 +33,13 @@ class App extends Component {
   //player id counter
   prevPlayerId = 4;
 
-  getHighScore = () => {
+  getSortedScores = () => {
   const scores = this.state.players.map( p => p.score );
   const highScore = Math.max(...scores);
-  if (highScore) {
-    return highScore;
+  var sortedscores = scores.sort((a,b) => a.timeM - b.timeM);
+
+  if (sortedscores) {
+    return sortedscores;
   }
   return null;
 };
@@ -68,10 +70,18 @@ class App extends Component {
         players: prevState.players.filter(p => p.id !== id)
       };
     });
-  }
+  };
 
   render() {
-    const highScore = this.getHighScore();
+    const sortedscores = this.getSortedScores();
+    const topthree = sortedscores.slice(0, 3).map(i => {
+      return <myview item={i} key={i.id} />
+  }
+
+    const highScore = topthree.slice(0, 2);
+    const secondScore = topthree.slice(1, 2);
+    const thirdScore = topthree.slice(2, 3);;
+
 
     return (
       <div className="scoreboard">
