@@ -70,7 +70,7 @@ class App extends Component {
         players: prevState.players.filter(p => p.id !== id)
       };
     });
-  }
+  };
 
   render() {
     const sortedscores = this.getSortedScores();
