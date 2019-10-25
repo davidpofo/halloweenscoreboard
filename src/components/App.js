@@ -103,7 +103,6 @@ class App extends Component {
             isThirdHigh = {secondThirdScore[1] === player.score}
           />
         )}
-        <p>{(console.log(sortedScores))}</p>
         <AddPlayerForm addPlayer={this.handleAddPlayer}/>
 
       </div>
