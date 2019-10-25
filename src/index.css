@@ -348,7 +348,11 @@ svg {
 
   .player-name,
   .counter-score {
-    color: #2F2366;
+    color: #070707;
+           font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 1em;
+      font-family: 'Bungee', cursive;
   }
 
   .player-name {
@@ -542,13 +546,6 @@ h1 {
     /*animation: letter 5s infinite alternate;*/
         text-shadow: 0 5px #964527;
 }
-
-/*h1 span {*/
-/*    display: block;*/
-/*    font-size: 0.7em;*/
-/*    color: orange;*/
-/*    text-shadow: 0 5px #964527;*/
-/*}*/
 
 
 .lantern {

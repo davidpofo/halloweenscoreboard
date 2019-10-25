@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 
 class AddPlayerForm extends Component {
 
-    playerInput = React.createRef()
+    playerInput = React.createRef();
 
 
     handleSubmit = (e) => {
     e.preventDefault();
     this.props.addPlayer(this.playerInput.current.value);
     e.currentTarget.reset();
-    }
+    };
 
     render() {
         return (
