@@ -40,14 +40,14 @@ class Stopwatch extends Component {
     render() {
         const seconds = Math.floor(this.state.elapsedTime /1000);
         return (
-            <divc className="stopwatch">
+            <div className="stopwatch">
                 <h2>StopWatch</h2>
                 <span className="stopwatch-time">
                     {seconds}
                 </span>
                 <button onClick={this.handleStopwatch}>{this.state.isRunning ? 'Stop' : 'Start'}</button>
                 <button onClick={this.handleReset}>Reset</button>
-            </divc>
+            </div>
         );
     }
 }
