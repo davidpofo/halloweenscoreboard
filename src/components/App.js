@@ -42,6 +42,16 @@ class App extends Component {
   }
   return null;
 };
+  getSortedScores = () => {
+  const scores = this.state.players.map( p => p.score );
+  const sortedscores = scores.sort(function(a, b){return b.score-a.score})
+
+  if (sortedscores) {
+    return sortedscores;
+  }
+  return null;
+};
+
   handleScoreChange = (index, delta) => {
     this.setState( prevState => ({
       score: prevState.players[index].score += delta
@@ -72,8 +82,8 @@ class App extends Component {
 
   render() {
     const highScore = this.getHighScore();
-    // const sortedScores = this.getSortedScores();
-
+    const sortedScores = this.getSortedScores();
+    const secondThirdScore = sortedScores.slice(1,3);
     return (
       <div className="scoreboard">
         <Header players={this.state.players}/>
@@ -89,9 +99,11 @@ class App extends Component {
             changeScore={this.handleScoreChange}
             removePlayer={this.handleRemovePlayer}
             isHighScore={highScore === player.score}  // is a player's 'score' prop equal to the high score?
+            isSecondHigh = {secondThirdScore[0] === player.score}
+            isThirdHigh = {secondThirdScore[1] === player.score}
           />
         )}
-        {/*<p>{(console.log(sortedScores))}</p>*/}
+        <p>{(console.log(sortedScores))}</p>
         <AddPlayerForm addPlayer={this.handleAddPlayer}/>
 
       </div>
