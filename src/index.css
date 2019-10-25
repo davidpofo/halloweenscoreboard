@@ -568,16 +568,10 @@ h1 {
     width: 52px;
     top: 0;
     bottom: 0;
-    background-color: #000;
     position: absolute;
     left: -100px;
     top: 0;
     margin: 20px 0;
-    border-top-left-radius: 200px;
-    border-bottom-left-radius: 2000px;
-    border-width: 0 0 0 20px;
-    border-color: #222;
-    border-style: solid;
     animation: git 1s infinite alternate;
 }
 .lantern:after {
@@ -650,8 +644,7 @@ h1 {
     animation: mouth 1s infinite alternate;
 }
 
-
-  /*CSS eyes*/
+/*CSS eyes*/
 
 #hitarea{
   position:absolute;
