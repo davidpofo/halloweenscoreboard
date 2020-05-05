@@ -360,7 +360,9 @@ svg {
     line-height: 3.5em;
     padding-left: 10px;
   }
-
+  .highlight:hover {
+    background: #FF7619;
+  }
   .remove-player {
     font-size: 1.15em;
     border: none;
