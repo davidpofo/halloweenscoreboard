@@ -342,10 +342,17 @@ svg {
     border-bottom-color: #070707;
   }
 
+  .css-11y2zco-Blink:hover .remove-player {
+    visibility: visible;
+  }
   .player-name:hover .remove-player {
     visibility: visible;
   }
 
+  .highlight:hover {
+    background: #FF7619;
+  }
+  .css-11y2zco-Blink,
   .player-name,
   .counter-score {
     color: #070707;
@@ -355,6 +362,11 @@ svg {
       font-family: 'Bungee', cursive;
   }
 
+  .css-11y2zco-Blink {
+    flex-grow: 1;
+    line-height: 3.5em;
+    padding-left: 10px;
+  }
   .player-name {
     flex-grow: 1;
     line-height: 3.5em;

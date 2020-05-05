@@ -10,22 +10,26 @@ class App extends Component {
       {
         name: "Player 1",
         score: 0,
-        id: 1
+        id: 1,
+        blink: false
       },
       {
         name: "Player 2",
         score: 0,
-        id: 2
+        id: 2,
+        blink: false
       },
       {
         name: "Player 3",
         score: 0,
-        id: 3
+        id: 3,
+        blink: false
       },
       {
         name: "Player 4",
         score: 0,
-        id: 4
+        id: 4,
+        blink: false
       },
     ]
   };
@@ -51,11 +55,18 @@ class App extends Component {
   }
   return null;
 };
-
+  getBlinks = () => {
+    const blinks = this.state.players.map( p => p.blink );
+    if (blinks) {
+      return blinks;
+    }
+    return false;
+  };
   handleScoreChange = (index, delta) => {
     this.setState( prevState => ({
-      score: prevState.players[index].score += delta
-    }));
+      score: prevState.players[index].score += delta,
+      blink: !prevState.players[index].blink
+    }) );
    };
   handleAddPlayer = (name) => {
     this.setState(prevState => {
@@ -65,7 +76,8 @@ class App extends Component {
         {
           name,
           score: 0,
-          id: this.prevPlayerId += 1
+          id: this.prevPlayerId += 1,
+          blink: false
 
         }
       ]}
@@ -81,6 +93,7 @@ class App extends Component {
   };
 
   render() {
+    const blinks = this.getBlinks();
     const highScore = this.getHighScore();
     const sortedScores = this.getSortedScores();
     const secondThirdScore = sortedScores.slice(1,3);
@@ -90,13 +103,14 @@ class App extends Component {
 
         {/* Players list */}
         {this.state.players.sort(function(a, b){return b.score-a.score}).sort(function(a, b){return b.name-a.name}).map( (player, index) =>
-          <Player 
+          <Player
             name={player.name}
             score={player.score}
             id={player.id}
             key={player.id.toString()}
             index={index}
             changeScore={this.handleScoreChange}
+            blink={player.blink}
             removePlayer={this.handleRemovePlayer}
             isHighScore={highScore === player.score}  // is a player's 'score' prop equal to the high score?
             isSecondHigh = {secondThirdScore[0] === player.score}
