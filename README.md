@@ -6,3 +6,5 @@
 3) The header contains a stopwatch and a track of the overall points and players
  
 It is currently deployed [here](https://halloweenscoreboard.herokuapp.com/) on the cloud platform heroku.
+
+MIT [License](https://github.com/davidpofo/halloweenscoreboard/blob/master/LICENSE.txt)
